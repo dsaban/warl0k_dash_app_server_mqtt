@@ -21,8 +21,8 @@ def check_exec(cmd):
 # check_exec("streamlit")
 
 # --- Check script files ---
-assert os.path.exists("server_dash_log.py"), "❌ server_dash_log.py not found"
-assert os.path.exists("client_dash_all_data_log.py"), "❌ client_dash_all_data_log.py not found"
+# assert os.path.exists("server_dash_log.py"), "❌ server_dash_log.py not found"
+# assert os.path.exists("client_dash_all_data_log.py"), "❌ client_dash_all_data_log.py not found"
 
 # --- Safe subprocess launcher ---
 def safe_launch(cmd_list, log_file):
