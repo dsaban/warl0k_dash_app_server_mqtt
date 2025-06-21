@@ -9,7 +9,6 @@ os.makedirs("logs", exist_ok=True)
 os.makedirs("../_session_keys", exist_ok=True)
 
 # Optional: Start Mosquitto broker (uncomment if needed)
-import subprocess
 
 def install_mosquitto():
     print("Installing Mosquitto...")
@@ -19,12 +18,18 @@ def install_mosquitto():
 # Call this early in your boot script
 install_mosquitto()
 
-print("Starting Mosquitto...")
+# print("Starting Mosquitto...")
+# subprocess.Popen(
+#     ["mosquitto_pub", "-c"],
+#     # stdout=open("logs/snap/bin/mosquitto_pub.log", "w"),
+#     stderr=subprocess.STDOUT
+# )
 subprocess.Popen(
-    ["mosquitto_pub", "-c"],
-    # stdout=open("logs/snap/bin/mosquitto_pub.log", "w"),
+    ["mosquitto", "-c", "/etc/mosquitto/mosquitto.conf"],  # Adjust path to config as needed
+    stdout=open("logs/mosquitto.log", "w"),
     stderr=subprocess.STDOUT
 )
+
 
 # Start WARL0K server process
 print("Starting WARL0K server...")
