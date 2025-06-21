@@ -16,9 +16,9 @@ def check_exec(cmd):
         raise FileNotFoundError(f"Executable '{cmd}' not found in PATH.")
     print(f"[✓] {cmd} found at {path}")
 
-check_exec("mosquitto")
-check_exec("python3")
-check_exec("streamlit")
+# check_exec("mosquitto")
+# check_exec("python3")
+# check_exec("streamlit")
 
 # --- Check script files ---
 assert os.path.exists("server_dash_log.py"), "❌ server_dash_log.py not found"
@@ -37,7 +37,7 @@ def safe_launch(cmd_list, log_file):
         print(f"[❌] Launch failed: {e}")
 
 # --- Launch Mosquitto (optional, comment if cloud already runs it) ---
-safe_launch(["mosquitto", "-c", "/etc/mosquitto/mosquitto.conf"], "logs/mosquitto.log")
+safe_launch(["/snap/bin/mosquitto_pub", "-c", "/etc/mosquitto/mosquitto.conf"], "logs/mosquitto.log")
 
 # --- Launch WARL0K Server ---
 safe_launch(["python3", "server_dash_log.py"], "logs/server.log")

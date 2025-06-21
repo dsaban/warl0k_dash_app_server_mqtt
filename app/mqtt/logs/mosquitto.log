@@ -1,0 +1,3 @@
+Error: Unknown option '/etc/mosquitto/mosquitto.conf'.
+
+Use 'mosquitto_pub --help' to see usage.
