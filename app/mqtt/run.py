@@ -9,12 +9,12 @@ os.makedirs("logs", exist_ok=True)
 os.makedirs("../_session_keys", exist_ok=True)
 
 # Optional: Start Mosquitto broker (uncomment if needed)
-print("Starting Mosquitto...")
-subprocess.Popen(
-    ["/snap/bin/mosquitto_pub", "-c"],
-    # stdout=open("logs/snap/bin/mosquitto_pub.log", "w"),
-    stderr=subprocess.STDOUT
-)
+# print("Starting Mosquitto...")
+# subprocess.Popen(
+#     ["/snap/bin/mosquitto_pub", "-c"],
+#     # stdout=open("logs/snap/bin/mosquitto_pub.log", "w"),
+#     stderr=subprocess.STDOUT
+# )
 
 # Start WARL0K server process
 print("Starting WARL0K server...")

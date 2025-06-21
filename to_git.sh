@@ -1,7 +1,7 @@
 #!/bin/bash
 # Navigate to the directory where the script is located
 git add .
-git commit -m "add run.py"
+git commit -m "update run.py --no mosquitto_pub"
 it remote add origin git@github.com:dsaban/warl0k_dash_app_server_mqtt.git
 git branch -M main
 git push -u origin main
